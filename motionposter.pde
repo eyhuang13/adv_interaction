@@ -6,12 +6,10 @@ PImage poster;
 PImage poster2;
 boolean has_motion = false;
 ArrayList<Particle> particles = new ArrayList<Particle>();
-//Serial sensorPort;
+int wave = 10; //for controlling particles
 String val = "";
 
 void setup(){
-  //fullScreen(2);
-
   size(1100, 1684);
   imageMode(CENTER);
   lotus = loadImage("lotus.png");
@@ -23,20 +21,10 @@ void setup(){
     Particle p_temp = new Particle(random(width), 612);
     particles.add(p_temp);
   }
-  //println(Serial.list()[0]);
-  //String portName = Serial.list()[0];
-  //sensorPort = new Serial(this, portName, 19200);
 }
 
-
-int wave = 10; //for controlling particles
 int ct = 0;
 void draw(){
-  /*if(sensorPort.available() > 0){
-    val = sensorPort.readStringUntil('\n');  
-  }*/
-  //println(val);
-
   if(has_motion){
     poster2.resize(width, height);
     background(poster2);
